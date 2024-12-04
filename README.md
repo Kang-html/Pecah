@@ -1,0 +1,3 @@
+# bot
+
+*⦿ bot password*
