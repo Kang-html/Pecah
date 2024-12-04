@@ -28,4 +28,4 @@ jobs:
 
     - name: Run the bot script
       run: |
-        python bot.py
+        python3 bot.py
