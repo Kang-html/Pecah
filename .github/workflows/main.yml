@@ -1,4 +1,4 @@
-name: Run ZIP Password Cracker Bot
+name: Run Python Bot
 
 on:
   push:
@@ -9,23 +9,30 @@ on:
       - main
 
 jobs:
-  build:
+  run-bot:
     runs-on: ubuntu-latest
 
+    env:
+      TERM: xterm  # Mengatasi masalah TERM tidak diatur
+
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
+      # Step 1: Checkout kode dari repository
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.12'
+      # Step 2: Set up Python
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.12  # Gunakan versi Python yang diinginkan
 
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
+      # Step 3: Install dependencies
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install -r requirements.txt
 
-    - name: Run the bot script
-      run: |
-        python3 bot.py
+      # Step 4: Jalankan skrip Python
+      - name: Run bot script
+        run: |
+          python3 bot.py
