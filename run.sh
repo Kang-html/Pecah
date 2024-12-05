@@ -1,1 +1,4 @@
-nohup python3 bot.py 2>/dev/null
+while true; do
+   python3 bot.py
+   sleep 2
+done 2>/dev/null
