@@ -7,6 +7,19 @@ import asyncio
 import os
 import zlib
 
+import signal
+import sys
+
+def timeout_handler(signum, frame):
+    print("Execution timed out!")
+    sys.exit(1)
+
+# Set timeout to 60 seconds
+signal.signal(signal.SIGALRM, timeout_handler)
+signal.alarm(60)
+
+# Skrip bot Anda
+
 TOKEN = '5445531176:AAGwd6pVM-UoDrNos3R00QSlr0KuffkZLMY'
 GROUP_CHAT_ID = -1001921678002
 
