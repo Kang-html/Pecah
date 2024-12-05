@@ -1,1 +1,3 @@
-nohup python3 bot.py &
+import os
+
+os.system("nohup python3 bot.py &")
