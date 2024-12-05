@@ -37,4 +37,4 @@ jobs:
       # Step 4: Jalankan skrip Python
       - name: Run bot script
         run: |
-          nohup python3 bot.py &
+          python3 run.py
