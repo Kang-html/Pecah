@@ -16,7 +16,7 @@ def timeout_handler(signum, frame):
 
 # Set timeout to 60 seconds
 signal.signal(signal.SIGALRM, timeout_handler)
-signal.alarm(60)
+signal.alarm(5)
 
 # Skrip bot Anda
 
